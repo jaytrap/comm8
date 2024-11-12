@@ -1,0 +1,6 @@
+argostranslate~=1.9.6
+pydantic~=2.9.2
+uvicorn[gunicorn]
+fastapi~=0.115.4
+whisper
+TTS~=0.22.0
