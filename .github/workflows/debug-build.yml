@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - main-workflow
+      - dev-workflow
 
 env:
   REGISTRY: registryui.srv489996.hstgr.cloud
