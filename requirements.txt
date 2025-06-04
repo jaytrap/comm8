@@ -1,6 +1,28 @@
-argostranslate~=1.9.6
-pydantic~=2.9.2
-uvicorn[gunicorn]
+# Core FastAPI dependencies
 fastapi~=0.115.4
-whisper
+uvicorn[standard]~=0.24.0
+python-multipart~=0.0.19
+
+# Data validation and serialization
+pydantic~=2.9.2
+
+# Audio processing and ML models
+openai-whisper>=20231117
 TTS~=0.22.0
+
+# Translation
+argostranslate~=1.9.6
+
+# Additional utilities
+python-json-logger~=2.0.7
+aiofiles~=23.2.0
+
+# Optional: for better audio processing
+# librosa~=0.10.1
+# soundfile~=0.12.1
+
+# Development dependencies (optional)
+# pytest~=7.4.0
+# pytest-asyncio~=0.21.0
+# black~=23.0.0
+# flake8~=6.0.0
