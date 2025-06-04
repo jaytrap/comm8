@@ -1,0 +1,124 @@
+name: Debug Build Issues
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main-workflow
+
+env:
+  REGISTRY: registryui.srv489996.hstgr.cloud
+  IMAGE_NAME: audio-transcription-api
+
+jobs:
+  debug-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Debug - Show files
+        run: |
+          echo "📁 Files in repository:"
+          ls -la
+          echo ""
+          echo "📋 Requirements.txt content:"
+          cat requirements.txt
+          echo ""
+          echo "🐳 Dockerfile content:"
+          cat Dockerfile
+
+      - name: Test local pip install
+        run: |
+          echo "🐍 Testing pip install locally..."
+          python3 -m pip install --upgrade pip
+          python3 -m pip install fastapi uvicorn python-multipart pydantic
+          echo "✅ Basic dependencies installed successfully"
+
+      - name: Build with minimal Dockerfile
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: Dockerfile.minimal  # Use the minimal version
+          platforms: linux/amd64
+          push: false
+          tags: test-image:latest
+          build-args: |
+            BUILDKIT_INLINE_CACHE=1
+
+      - name: Test the built image
+        run: |
+          echo "🧪 Testing the built image..."
+          docker run --rm test-image:latest python -c "
+          try:
+              import fastapi
+              import uvicorn
+              print('✅ FastAPI imports successful')
+              
+              import whisper
+              print('✅ Whisper imports successful')
+              
+              print('✅ All imports successful!')
+          except ImportError as e:
+              print(f'❌ Import error: {e}')
+              exit(1)
+          "
+
+  test-requirements:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Test requirements installation
+        run: |
+          echo "🧪 Testing requirements.txt installation..."
+          python -m pip install --upgrade pip
+          
+          echo "📦 Installing FastAPI dependencies..."
+          pip install fastapi uvicorn[standard] python-multipart pydantic
+          
+          echo "📦 Installing PyTorch (CPU)..."
+          pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+          
+          echo "📦 Installing Whisper..."
+          pip install openai-whisper
+          
+          echo "📦 Installing TTS..."
+          pip install TTS==0.22.0
+          
+          echo "📦 Installing remaining dependencies..."
+          pip install argostranslate aiofiles python-json-logger
+          
+          echo "✅ All dependencies installed successfully!"
+
+      - name: Test imports
+        run: |
+          python -c "
+          import fastapi
+          print('✅ FastAPI works')
+          
+          import whisper
+          print('✅ Whisper works')
+          
+          try:
+              from TTS.api import TTS
+              print('✅ TTS works')
+          except Exception as e:
+              print(f'⚠️ TTS issue: {e}')
+          
+          import argostranslate.translate
+          print('✅ Argostranslate works')
+          
+          print('🎉 All imports successful!')
+          "
