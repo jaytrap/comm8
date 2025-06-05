@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5e86d69-a098-40a6-9f08-cc20a52705e4" name="Changes" comment="innit">
-      <change afterPath="$PROJECT_DIR$/services/model_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/validators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/transcribe_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/transcribe_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/response_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/response_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/transcribe_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/transcribe_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/audio_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/audio_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/translation_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/translation_utils.py" afterDir="false" />
-    </list>
+    <list default="true" id="d5e86d69-a098-40a6-9f08-cc20a52705e4" name="Changes" comment="updates" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,6 +21,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SET_USER_NAME_GLOBALLY" value="false" />
   </component>
@@ -58,19 +50,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Docker.Dockerfile.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.Dockerfile.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main-workflow",
+    "last_opened_file_path": "/Users/jeromeazah/PycharmProjects/comm8/.github/workflows",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Docker.Dockerfile">
     <configuration name="comm8" type="Python.FastAPI">
       <option name="file" value="$PROJECT_DIR$/main.py" />
@@ -128,7 +121,7 @@
       <workItem from="1745008941454" duration="1355000" />
       <workItem from="1745091421160" duration="2404000" />
       <workItem from="1745329176431" duration="598000" />
-      <workItem from="1749059939393" duration="1802000" />
+      <workItem from="1749059939393" duration="6468000" />
     </task>
     <task id="LOCAL-00001" summary="innit">
       <option name="closed" value="true" />
@@ -138,7 +131,31 @@
       <option name="project" value="LOCAL" />
       <updated>1731455054577</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="updates">
+      <option name="closed" value="true" />
+      <created>1749063755500</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1749063755500</updated>
+    </task>
+    <task id="LOCAL-00003" summary="updates">
+      <option name="closed" value="true" />
+      <created>1749064620559</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1749064620559</updated>
+    </task>
+    <task id="LOCAL-00004" summary="updates">
+      <option name="closed" value="true" />
+      <created>1749071020918</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1749071020918</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,6 +163,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="innit" />
-    <option name="LAST_COMMIT_MESSAGE" value="innit" />
+    <MESSAGE value="updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="updates" />
   </component>
 </project>

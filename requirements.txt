@@ -1,28 +1,30 @@
-# Core FastAPI dependencies
-fastapi~=0.115.4
-uvicorn[standard]~=0.24.0
-python-multipart~=0.0.19
+# Core FastAPI dependencies (install first)
+fastapi>=0.100.0
+uvicorn[standard]>=0.20.0
+python-multipart>=0.0.19
+pydantic>=2.0.0
 
-# Data validation and serialization
-pydantic~=2.9.2
+# Basic utilities
+aiofiles>=23.0.0
 
-# Audio processing and ML models
+# Audio processing (CPU-only versions for faster builds)
 openai-whisper>=20231117
-TTS~=0.22.0
+
+# TTS - specific version to avoid conflicts
+TTS==0.22.0
 
 # Translation
-argostranslate~=1.9.6
+argostranslate>=1.9.0
 
 # Additional utilities
-python-json-logger~=2.0.7
-aiofiles~=23.2.0
+python-json-logger>=2.0.0
 
-# Optional: for better audio processing
-# librosa~=0.10.1
-# soundfile~=0.12.1
+# Fix potential conflicts by pinning versions
+torch>=2.0.0
+torchaudio>=2.0.0
+numpy>=1.24.0
+scipy>=1.10.0
 
-# Development dependencies (optional)
-# pytest~=7.4.0
-# pytest-asyncio~=0.21.0
-# black~=23.0.0
-# flake8~=6.0.0
+# Ensure compatible versions
+typing-extensions>=4.5.0
+annotated-types>=0.4.0
